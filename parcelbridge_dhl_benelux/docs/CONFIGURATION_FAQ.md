@@ -248,8 +248,12 @@ cancel in the portal if you want the shipment removed from your MDP
 shipment list for housekeeping.
 
 **Do shipments created via the API appear in the DHL dashboard?**
-This is account dependent and should be confirmed with DHL for the specific
-contract.
+Yes for production keys: shipments created via the API show up in the
+DHL portal under your account, exactly as if you had entered them
+manually. Sandbox shipments do not appear in the production portal
+(that is the whole point of sandbox: labels are generated and tracker
+codes returned, but the parcel never enters DHL's network and is not
+billed).
 
 **The portal has a "save this customer" tickbox when entering a shipment.
 Does the module use it?**
