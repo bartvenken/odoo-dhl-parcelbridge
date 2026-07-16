@@ -43,7 +43,7 @@
             </p>
           </div>
           <div class="alert alert-info" role="alert"
-               groups="!delivery_dhl_parcel.group_dhl_parcel_admin">
+               groups="!parcelbridge_dhl_benelux.group_dhl_parcel_admin">
             <strong>You cannot see or edit the DHL API credentials.</strong>
             <p>
               Access to the DHL User ID, API Key and Account ID is restricted to members of the group "DHL Parcel Administrator". Your regular delivery-carrier permissions are not affected: you can still create, edit and use this carrier, validate deliveries and print labels. Only the credential fields themselves are hidden.
@@ -53,7 +53,7 @@
             </p>
           </div>
           <div class="alert alert-warning" role="alert"
-               groups="delivery_dhl_parcel.group_dhl_parcel_admin"
+               groups="parcelbridge_dhl_benelux.group_dhl_parcel_admin"
                invisible="dhlparcel_api_key">
             <strong>No DHL API Key yet? Read this first.</strong>
             <p>
@@ -64,7 +64,7 @@
             </p>
           </div>
           <group string="Credentials"
-                 groups="delivery_dhl_parcel.group_dhl_parcel_admin">
+                 groups="parcelbridge_dhl_benelux.group_dhl_parcel_admin">
             <group>
               <field name="dhlparcel_user_id"/>
               <field name="dhlparcel_account_id"/>

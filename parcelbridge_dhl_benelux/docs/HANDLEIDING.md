@@ -3,7 +3,7 @@
 Deze handleiding beschrijft hoe je de module **ParcelBridge for DHL eCommerce Benelux**
 installeert, configureert en gebruikt in de dagelijkse Odoo-workflow.
 
-> **Versie van de module:** 17.0.0.13.0 / 18.0.0.13.0 / 19.0.0.13.0 (functioneel identiek)
+> **Versie van de module:** 17.0.1.0.0 / 18.0.1.0.0 / 19.0.1.0.0 (functioneel identiek)
 > **Voor Odoo:** 17.0 / 18.0 / 19.0 (community en enterprise)
 
 ---
@@ -201,7 +201,7 @@ Carrier* → klik Install.
 
 **Vanuit de command line:**
 ```bash
-odoo-bin -d <database> -i delivery_dhl_parcel
+odoo-bin -d <database> -i parcelbridge_dhl_benelux
 ```
 
 ### Optioneel maar aangeraden: Packages-feature aanzetten

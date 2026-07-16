@@ -57,7 +57,7 @@ class StockPicking(models.Model):
             "exported_at": fields.Datetime.now().isoformat(),
             "odoo_version": odoo.release.version,
             "module_version": self.env["ir.module.module"].sudo().search(
-                [("name", "=", "delivery_dhl_parcel")],
+                [("name", "=", "parcelbridge_dhl_benelux")],
                 limit=1).installed_version or "?",
             "picking": {
                 "id": self.id,
