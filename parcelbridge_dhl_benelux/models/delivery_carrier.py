@@ -140,7 +140,7 @@ class DeliveryCarrier(models.Model):
              "shipping method. Create one shipping method per parcel type "
              "you offer. Pick 'Mixed' to combine several types in a single "
              "shipment — the delivery then exposes a DHL Parcels tab where "
-             "you pick a type per parcel (just like the the DHL portal "
+             "you pick a type per parcel (just like the DHL portal "
              "portal).")
     dhlparcel_last_error = fields.Text(
         "Last DHL API error", readonly=True, copy=False,
