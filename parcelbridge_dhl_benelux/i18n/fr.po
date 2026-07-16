@@ -147,7 +147,7 @@ msgstr ""
 "Créez une méthode d'expédition par type de colis que vous proposez. "
 "Choisissez 'Mixte' pour combiner plusieurs types dans un seul envoi — un "
 "onglet DHL Parcels apparaît alors sur le bon de livraison où vous "
-"choisissez un type par colis (comme dans le portail My DHL Parcel)."
+"choisissez un type par colis (comme dans le portail DHL)."
 
 #. module: delivery_dhl_parcel
 #: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_default_weight
@@ -213,11 +213,11 @@ msgstr "Pas encore de clé API DHL ? Lisez ceci d'abord."
 #: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
 msgid ""
 "API access is not part of a standard DHL eCommerce Benelux contract. Before "
-"you can create keys in the My DHL Parcel portal, DHL has to activate the "
+"you can create keys in the DHL portal, DHL has to activate the "
 "API role on your account."
 msgstr ""
 "L'accès API ne fait pas partie d'un contrat DHL eCommerce Benelux standard. "
-"Avant de pouvoir créer des clés dans le portail My DHL Parcel, DHL doit "
+"Avant de pouvoir créer des clés dans le portail DHL, DHL doit "
 "activer le rôle API sur votre compte."
 
 #. module: delivery_dhl_parcel
@@ -274,24 +274,24 @@ msgid ""
 "Shipments created with this carrier will be validated by DHL but will not "
 "enter the network and will not be billed. Either switch the toggle at the "
 "top of this form to Test Environment, or replace the API key with a "
-"production key from My DHL Parcel."
+"production key from the DHL portal."
 msgstr ""
 "Les envois créés avec ce transporteur seront validés par DHL mais "
 "n'entreront pas dans le réseau et ne seront pas facturés. Basculez le "
 "sélecteur en haut de ce formulaire sur Test Environment, ou remplacez la "
-"clé API par une clé de production depuis My DHL Parcel."
+"clé API par une clé de production depuis le portail DHL."
 
 #. module: delivery_dhl_parcel
 #: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
 msgid ""
 "Shipments created with this carrier will be real DHL shipments and will be "
 "billed. Either switch the toggle at the top of this form to Production "
-"Environment, or replace the API key with a sandbox key from My DHL Parcel."
+"Environment, or replace the API key with a sandbox key from the DHL portal."
 msgstr ""
 "Les envois créés avec ce transporteur seront de véritables envois DHL et "
 "seront facturés. Basculez le sélecteur en haut de ce formulaire sur "
 "Production Environment, ou remplacez la clé API par une clé sandbox depuis "
-"My DHL Parcel."
+"the DHL portal."
 
 #. module: delivery_dhl_parcel
 #: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_last_test_at
@@ -395,7 +395,7 @@ msgstr ""
 "\n"
 "User ID, API Key et Account ID ont tous le bon format, mais au moins l'un "
 "de User ID ou API Key ne correspond pas à ce qui est actuellement actif "
-"dans My DHL Parcel -> Settings -> API Keys. L'API DHL ne nous dit "
+"dans the DHL portal -> Settings -> API Keys. L'API DHL ne nous dit "
 "délibérément pas lequel des deux est faux.\n"
 "\n"
 "Réponse DHL : %s"
@@ -629,11 +629,11 @@ msgstr "Exporter le bundle de diagnostic DHL"
 #. module: delivery_dhl_parcel
 #: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_picking_form_dhl_parcel
 msgid ""
-"One row per parcel, just like in the My DHL Parcel portal. The type list "
+"One row per parcel, just like in the DHL portal. The type list "
 "adapts to the recipient (private person vs company). Weight is optional; "
 "the carrier's default weight is used when blank."
 msgstr ""
-"Une ligne par colis, comme dans le portail My DHL Parcel. La liste de types "
+"Une ligne par colis, comme dans le portail DHL. La liste de types "
 "s'adapte au destinataire (particulier ou entreprise). Le poids est "
 "optionnel ; le poids par défaut du transporteur est utilisé si vide."
 

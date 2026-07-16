@@ -53,7 +53,7 @@
             </list>
           </field>
           <p class="text-muted">
-            One row per parcel, just like in the My DHL Parcel portal.
+            One row per parcel, just like in the DHL portal.
             The type list adapts to the recipient (private person vs
             company). Weight is optional; the carrier's default weight
             is used when blank.
