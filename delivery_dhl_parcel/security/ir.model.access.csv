@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dhl_parcel_line_stock_user,dhl.parcel.line.stock.user,model_dhl_parcel_line,stock.group_stock_user,1,1,1,1
+access_dhl_parcel_tariff_stock_user_read,dhl.parcel.tariff.stock.user.read,model_dhl_parcel_tariff,stock.group_stock_user,1,0,0,0
+access_dhl_parcel_tariff_stock_manager,dhl.parcel.tariff.stock.manager,model_dhl_parcel_tariff,stock.group_stock_manager,1,1,1,1
