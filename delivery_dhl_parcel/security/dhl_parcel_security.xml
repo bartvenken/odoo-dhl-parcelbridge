@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+
+  <record id="res_groups_privilege_dhl_parcel" model="res.groups.privilege">
+    <field name="name">DHL Parcel</field>
+    <field name="sequence">30</field>
+    <field name="category_id" ref="base.module_category_shipping_connectors"/>
+  </record>
+
+  <record id="group_dhl_parcel_admin" model="res.groups">
+    <field name="name">DHL Parcel Administrator</field>
+    <field name="privilege_id" ref="res_groups_privilege_dhl_parcel"/>
+    <field name="comment">Users in this group can view and edit DHL Parcel API credentials (User ID, API Key, Account ID) on delivery carriers. Non-members can still create and use DHL Parcel carriers but do not see the credential fields.</field>
+  </record>
+
+  <record id="base.group_system" model="res.groups">
+    <field name="implied_ids" eval="[(4, ref('group_dhl_parcel_admin'))]"/>
+  </record>
+
+</odoo>
