@@ -134,8 +134,8 @@ DHL parcel type (Mailbox parcel / Parcel up to 10 kg / ... / Pallet up to
 Create one shipping method per type you want to offer. A regular parcel maxes
 at 31 kg; above that, use a Pallet method.
 
-For shipments that mix parcel types in one delivery (like the the DHL portal
-portal supports), create a method with **Parcel type = Mixed (MIX)**. On
+For shipments that mix parcel types in one delivery (like the DHL portal
+supports), create a method with **Parcel type = Mixed (MIX)**. On
 deliveries using that method a **DHL Parcels** tab appears where you add one
 row per parcel, picking the type per row. The type list adapts to whether the
 recipient is a private person or a business.
@@ -202,7 +202,7 @@ per piece and one combined multi-page label PDF. No need to use Put in Pack
 when all pieces are the same type.
 
 **I don't see a "Put in Pack" button on the delivery.**
-Enable the Packages feature: Inventory → Configuration → Settings → Operations >
+Enable the Packages feature: Inventory → Configuration → Settings → Operations →
 Packages, then save. The button appears on the delivery afterwards.
 
 **How do I put some products in one box and the rest in another?**
@@ -225,15 +225,9 @@ which items go in which box, use the **Number of parcels** field instead
 (simpler - one click).
 
 **Which destinations can I ship to?**
-Benelux works now: BE, NL and LU are all handled by the default flow. DHL
-resolves the correct product automatically (DFY or Europlus for NL, Parcel
-Connect or Europlus for LU) and the parcel-type tiers are available. Set the
-carrier's Countries to BE, NL, LU.
-
-Shipping beyond Benelux (DE, FR, GB, ...) is a separate, not-yet-built feature.
-Those routes use different products (DHL Parcel Connect, Europlus International,
-Europlus Pallet) and, for non-EU destinations such as GB, a customs
-declaration. It also depends on your DHL contract including those products.
+All 31 European destinations covered by DHL eCommerce Benelux. See
+"Which destinations does the module support, and how is the DHL
+product picked?" below for the full list and product resolution logic.
 
 **Does the parcel type depend on whether the customer is a person or a company?**
 No. DHL's parcel-type catalog is the same regardless of recipient; the
@@ -293,7 +287,7 @@ As of module version 17.0.0.8.8 the three credential fields (User ID, API
 Key, Account ID) are restricted to a dedicated group **DHL Parcel
 Administrator**. Odoo administrators are added automatically. Other users
 who need to set or read those fields must be added to the group
-manually: **Settings → Users & Companies → Users > <the user> > Access
+manually: **Settings → Users & Companies → Users → [the user] → Access
 Rights → tab Other → DHL Parcel Administrator**. Members of that group
 retain their regular access to everything else; the group only unlocks
 the credential fields.
