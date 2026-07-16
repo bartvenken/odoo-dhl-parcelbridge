@@ -12,15 +12,15 @@ meant to grow into the customer-facing FAQ.
 - **The API role assigned to that account by DHL.** This is the part most
   people miss. A standard DHL eCommerce Benelux account does not have API
   access out of the box; the API role has to be granted by DHL staff on
-  request. Without it, the My DHL Parcel portal does not show an API Keys
+  request. Without it, the DHL portal does not show an API Keys
   section and no credentials can be created. See "Where do I get the API
   credentials?" below for how to request it.
 - API credentials: a **User ID** and an **API Key**, plus the short **Account
   ID** (customer number). Created in the portal once the API role is active.
 - To ship a delivery as several parcels (multicollo), either use the
   **Number of parcels** field on the delivery (simplest, one DHL piece with
-  quantity=N) or enable the **Packages** feature (Inventory > Configuration
-  > Settings > Operations > Packages) and use **Put in Pack** to split items
+  quantity=N) or enable the **Packages** feature (Inventory → Configuration
+  → Settings → Operations → Packages) and use **Put in Pack** to split items
   per box. With Put in Pack, each package becomes a separate piece.
 
 ## Setting up the shipping method
@@ -30,7 +30,7 @@ parcel, Parcel up to 10 kg, Parcel up to 20 kg, ...). Each method
 represents one fixed DHL parcel type with its own pricing.
 
 1. Install the module **ParcelBridge for DHL eCommerce Benelux**.
-2. Go to **Inventory > Configuration > Shipping Methods** and create a new one.
+2. Go to **Inventory → Configuration → Shipping Methods** and create a new one.
 3. Set **Provider** to **ParcelBridge for DHL eCommerce Benelux**. A **DHL Parcel** tab appears.
 4. On that tab, fill in:
    - **Credentials**: User ID, API Key, Account ID.
@@ -63,7 +63,7 @@ DHL technical contact when in doubt.
 - **Live pricing via the API.** Confirmed with DHL: the gateway has no rating
   endpoint, and the `price` field that appears in the `/parcel-types` schema is
   meant for customs declarations (currency + declared value), not for tariff
-  lookup. Tariffs can be viewed in the My DHL Parcel portal (requires the Rate
+  lookup. Tariffs can be viewed in the DHL portal (requires the Rate
   Manager role on your account) but cannot be fetched programmatically. The
   module therefore uses the carrier's configured price (flat amount or
   weight-based rules) for shipping cost on the sale order.
@@ -72,7 +72,7 @@ DHL technical contact when in doubt.
   cancelling a shipment programmatically. Their OpenAPI spec covers
   `GET /intervention-options` (to ask whether interventions are available)
   but provides no POST endpoint for actually executing a cancel. Cancellation
-  is meant to happen in the My DHL Parcel portal. The module's cancel action
+  is meant to happen in the DHL portal. The module's cancel action
   reflects this: it posts a chatter note on the delivery telling the operator
   to cancel in the portal, and leaves the local tracking reference in place
   so the operator can look it up. This is not a temporary limitation - it is
@@ -134,7 +134,7 @@ DHL parcel type (Mailbox parcel / Parcel up to 10 kg / ... / Pallet up to
 Create one shipping method per type you want to offer. A regular parcel maxes
 at 31 kg; above that, use a Pallet method.
 
-For shipments that mix parcel types in one delivery (like the My DHL Parcel
+For shipments that mix parcel types in one delivery (like the the DHL portal
 portal supports), create a method with **Parcel type = Mixed (MIX)**. On
 deliveries using that method a **DHL Parcels** tab appears where you add one
 row per parcel, picking the type per row. The type list adapts to whether the
@@ -184,7 +184,7 @@ and production. Whether you are in test or live depends only on which API key
 you enter.
 
 **Can I set a default shipping method on orders?**
-Set the **Delivery Method** field on the customer (Contacts > customer > Sales
+Set the **Delivery Method** field on the customer (Contacts → customer → Sales
 and Purchase tab). New orders for that customer then default to it. There is no
 single global default for all orders without customization. For webshop orders
 the customer chooses the method at checkout.
@@ -202,7 +202,7 @@ per piece and one combined multi-page label PDF. No need to use Put in Pack
 when all pieces are the same type.
 
 **I don't see a "Put in Pack" button on the delivery.**
-Enable the Packages feature: Inventory > Configuration > Settings > Operations >
+Enable the Packages feature: Inventory → Configuration → Settings → Operations >
 Packages, then save. The button appears on the delivery afterwards.
 
 **How do I put some products in one box and the rest in another?**
@@ -242,7 +242,7 @@ automatically (a home-delivery product for consumers, a business product
 otherwise).
 
 **How do I cancel a shipment?**
-In the My DHL Parcel portal - there is no programmatic alternative. DHL's
+In the DHL portal - there is no programmatic alternative. DHL's
 public API has no cancel endpoint, only a read-only `GET /intervention-options`
 that reports whether a cancel would be allowed. The module's cancel action
 posts a note on the delivery (with the tracking reference still readable so
@@ -260,7 +260,7 @@ contract.
 **The portal has a "save this customer" tickbox when entering a shipment.
 Does the module use it?**
 No, and it cannot: DHL Parcel's public API has no address-book / customer
-endpoints. The "save customer" tickbox in My DHL Parcel is a portal-internal
+endpoints. The "save customer" tickbox in the DHL portal is a portal-internal
 feature that only matters when you enter shipments manually through the
 portal UI. In our flow, Odoo's `res.partner` records are the customer
 database: each delivery sends its receiver address straight from the partner
@@ -279,12 +279,12 @@ you create the actual keys in the portal.
    manager with your customer number and explicitly ask them to enable API
    access on the account so you can create API keys via the portal.
 
-   Until that role is granted, the My DHL Parcel portal shows only a
+   Until that role is granted, the DHL portal shows only a
    "Connections" page and no API Keys section. That is the signal that
    step 1 is not yet done.
 
 2. **Create the keys in the portal.** Once DHL confirms the role is
-   active, log into My DHL Parcel and go to **Settings > API Keys**. Copy
+   active, log into the DHL portal and go to **Settings → API Keys**. Copy
    the **User ID** and **API Key** shown there. The **Account ID** is the
    short customer number visible on invoices and in your account details.
 
@@ -293,8 +293,8 @@ As of module version 17.0.0.8.8 the three credential fields (User ID, API
 Key, Account ID) are restricted to a dedicated group **DHL Parcel
 Administrator**. Odoo administrators are added automatically. Other users
 who need to set or read those fields must be added to the group
-manually: **Settings > Users & Companies > Users > <the user> > Access
-Rights > tab Other > DHL Parcel Administrator**. Members of that group
+manually: **Settings → Users & Companies → Users > <the user> > Access
+Rights → tab Other → DHL Parcel Administrator**. Members of that group
 retain their regular access to everything else; the group only unlocks
 the credential fields.
 

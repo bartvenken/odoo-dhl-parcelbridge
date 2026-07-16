@@ -1,7 +1,7 @@
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
-# Recipient-aware DHL parcel types, mirroring the My DHL Parcel portal.
+# Recipient-aware DHL parcel types, mirroring the DHL portal.
 CONSUMER_TYPES = [
     ("ENVELOPE", "Envelope 50 to 500 g"),
     ("XSMALL", "Mailbox parcel"),

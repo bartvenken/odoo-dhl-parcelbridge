@@ -54,7 +54,7 @@ The module does not:
 - **Fetch live rates** - the DHL Parcel gateway has no rate endpoint.
   You configure prices on the carrier itself.
 - **Cancel shipments via the API** - DHL's public API offers no cancel
-  endpoint. Cancellation happens in the My DHL Parcel portal (see
+  endpoint. Cancellation happens in the DHL portal (see
   chapter 12).
 - **Ship from countries outside BE/NL/LU** - that requires a different
   DHL contract and a different module.
@@ -150,9 +150,9 @@ Until DHL confirms the role is granted, the portal only shows a
 "Connections" page - no API Keys section. That's the signal that step 1
 is not yet done.
 
-#### Step 2 - Create an API key in the My DHL Parcel portal
+#### Step 2 - Create an API key in the DHL portal
 
-Once DHL has granted the role: log into the My DHL Parcel portal and
+Once DHL has granted the role: log into the DHL portal and
 go to **Settings → API Keys**. Here you create your credentials and
 copy three values:
 
@@ -183,7 +183,7 @@ that mention permissions, this is the first thing to have DHL verify.
   endpoint. Tariffs can only be viewed in the portal (with the
   *Rate Manager* role). You're responsible for prices on the Odoo
   carrier yourself.
-- **Address book export**. The address book in My DHL Parcel is not
+- **Address book export**. The address book in the DHL portal is not
   accessible via the API.
 - **Shipment history queries**. The gateway is transactional (create
   a label, fetch one shipment), not for historical queries.
@@ -667,7 +667,7 @@ your customer manually tracks.
 
 ## 12. Cancelling
 
-> **Cancellation always happens in the My DHL Parcel portal.**
+> **Cancellation always happens in the DHL portal.**
 > DHL's public API offers no endpoint to programmatically cancel
 > shipments. Their OpenAPI spec only has a read-only
 > `GET /intervention-options` to check whether a cancel would be
@@ -684,7 +684,7 @@ The cancel action in Odoo:
   module does).
 - Does not call the DHL API.
 
-**What you must do:** log into My DHL Parcel, copy the tracker code
+**What you must do:** log into the DHL portal, copy the tracker code
 from the chatter note of the delivery, find the shipment there, and
 cancel it.
 
@@ -751,7 +751,7 @@ versa). Local guards normally catch this before the API call.
 
 > **"DHL Parcel authentication returned no accessToken"**
 
-Wrong User ID or API Key. Check both in My DHL Parcel.
+Wrong User ID or API Key. Check both in the DHL portal.
 
 > **HTTP 401/403 errors about labels**
 

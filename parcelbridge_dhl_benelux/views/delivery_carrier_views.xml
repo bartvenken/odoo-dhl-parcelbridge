@@ -32,14 +32,14 @@
                invisible="not (prod_environment and dhlparcel_key_environment == 'sandbox')">
             <strong>Production environment is set, but the API key is a sandbox key.</strong>
             <p>
-              Shipments created with this carrier will be validated by DHL but will not enter the network and will not be billed. Either switch the toggle at the top of this form to Test Environment, or replace the API key with a production key from My DHL Parcel.
+              Shipments created with this carrier will be validated by DHL but will not enter the network and will not be billed. Either switch the toggle at the top of this form to Test Environment, or replace the API key with a production key from the DHL portal.
             </p>
           </div>
           <div class="alert alert-warning" role="alert"
                invisible="not (not prod_environment and dhlparcel_key_environment == 'production')">
             <strong>Test environment is set, but the API key is a production key.</strong>
             <p>
-              Shipments created with this carrier will be real DHL shipments and will be billed. Either switch the toggle at the top of this form to Production Environment, or replace the API key with a sandbox key from My DHL Parcel.
+              Shipments created with this carrier will be real DHL shipments and will be billed. Either switch the toggle at the top of this form to Production Environment, or replace the API key with a sandbox key from the DHL portal.
             </p>
           </div>
           <div class="alert alert-info" role="alert"
@@ -57,7 +57,7 @@
                invisible="dhlparcel_api_key">
             <strong>No DHL API Key yet? Read this first.</strong>
             <p>
-              API access is not part of a standard DHL eCommerce Benelux contract. Before you can create keys in the My DHL Parcel portal, DHL has to activate the API role on your account.
+              API access is not part of a standard DHL eCommerce Benelux contract. Before you can create keys in the DHL portal, DHL has to activate the API role on your account.
             </p>
             <p>
               How to request it: email your DHL contact (or DHL eCommerce support), mention your DHL customer number, and ask them to enable API access on your account so you can generate API keys via the portal. Until they confirm, the portal only shows a "Connections" page and no API Keys section - that is the signal that this step is not yet done. Once active, log into the portal, go to Settings &gt; API Keys, create a key, and paste User ID, API Key and Account ID here.
