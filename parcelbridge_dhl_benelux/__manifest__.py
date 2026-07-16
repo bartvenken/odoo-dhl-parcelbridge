@@ -28,7 +28,7 @@
     'currency': 'EUR',
     'support': 'dhlparcel.odoo@gmail.com',
     'images': ['static/description/main_screenshot.png'],
-    'version': '19.0.1.0.1',
+    'version': '19.0.1.0.2',
     'depends': ['stock_delivery', 'sale'],
     'data': [
         'security/dhl_parcel_security.xml',

@@ -53,7 +53,7 @@ De module doet niet:
 - **Live tarieven** ophalen - de DHL Parcel-gateway heeft geen rate-endpoint.
   Prijzen stel je in op de carrier zelf.
 - **Verzendingen annuleren via de API** - DHL's publieke API biedt geen
-  cancel-endpoint. Annuleren gebeurt in het My DHL Parcel-portaal (zie
+  cancel-endpoint. Annuleren gebeurt in het DHL-portaal (zie
   hoofdstuk 12).
 - **Verzenden vanuit landen buiten BE/NL/LU** - daarvoor heb je een ander
   DHL-contract en een andere module nodig.
@@ -144,9 +144,9 @@ Tot DHL bevestigt dat de rol toegekend is, ga je in het portaal alleen
 een "Connections"-pagina zien - geen API Keys-sectie. Dat is het signaal
 dat stap 1 nog niet rond is.
 
-#### Stap 2 - API Key aanmaken in het My DHL Parcel-portaal
+#### Stap 2 - API Key aanmaken in het DHL-portaal
 
-Eens DHL de rol heeft toegekend: log in op het My DHL Parcel-portaal en
+Eens DHL de rol heeft toegekend: log in op het DHL-portaal en
 ga naar **Settings → API Keys**. Hier maak je je credentials aan en kopieer
 je drie waarden:
 
@@ -177,7 +177,7 @@ over permissions gaan, is dit het eerste wat je laat verifiëren door DHL.
   rate-endpoint. Tarieven kan je enkel in het portaal bekijken (met de
   *Rate Manager*-rol). Prijzen op de Odoo-carrier ben je zelf
   verantwoordelijk voor.
-- **Adresboek-export**. Het adresboek in My DHL Parcel is niet via de API
+- **Adresboek-export**. Het adresboek in the DHL portal is niet via de API
   toegankelijk.
 - **Shipment-historiek opvragen**. De gateway is transactioneel
   (label aanmaken, één shipment ophalen), niet voor historische queries.
@@ -659,7 +659,7 @@ zelf niks aan te doen tenzij je klant handmatig track-and-tracet.
 
 ## 12. Annuleren
 
-> **Annuleren gebeurt altijd in het My DHL Parcel-portaal.**
+> **Annuleren gebeurt altijd in het DHL-portaal.**
 > DHL's publieke API biedt geen endpoint om shipments programmatisch te
 > annuleren. Hun OpenAPI-spec heeft alleen een read-only
 > `GET /intervention-options` om te checken of een cancel toegestaan zou
@@ -675,7 +675,7 @@ De cancel-actie in Odoo:
   dat de module doet).
 - Roept de DHL-API niet aan.
 
-**Wat je moet doen:** log in op My DHL Parcel, kopieer de tracker-code
+**Wat je moet doen:** log in op het DHL-portaal, kopieer de tracker-code
 uit de chatter-note van de delivery, zoek de shipment daar op, en
 annuleer 'm.
 
@@ -742,7 +742,7 @@ omgekeerd). Lokale guards vangen dit normaal op vóór de API-call.
 
 > **"DHL Parcel authentication returned no accessToken"**
 
-Verkeerde User ID of API Key. Controleer beide in My DHL Parcel.
+Verkeerde User ID of API Key. Controleer beide in het DHL-portaal.
 
 > **HTTP 401/403 errors over labels**
 

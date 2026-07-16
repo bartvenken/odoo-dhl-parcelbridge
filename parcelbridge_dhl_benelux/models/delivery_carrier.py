@@ -140,7 +140,7 @@ class DeliveryCarrier(models.Model):
              "shipping method. Create one shipping method per parcel type "
              "you offer. Pick 'Mixed' to combine several types in a single "
              "shipment — the delivery then exposes a DHL Parcels tab where "
-             "you pick a type per parcel (just like the My DHL Parcel "
+             "you pick a type per parcel (just like the the DHL portal "
              "portal).")
     dhlparcel_last_error = fields.Text(
         "Last DHL API error", readonly=True, copy=False,
@@ -973,7 +973,7 @@ class DeliveryCarrier(models.Model):
         return res
 
     def dhlparcel_get_tracking_link(self, picking):
-        # The MyDHL eCommerce track & trace page requires both the tracker
+        # The DHL track & trace page requires both the tracker
         # code and the receiver's postal code; without the postcode the
         # page returns a "no shipment found" error.
         tracker = (picking.carrier_tracking_ref or "").split(",")[0].strip()
@@ -1013,7 +1013,7 @@ class DeliveryCarrier(models.Model):
                 "Note: this does NOT cancel the shipment at DHL. DHL "
                 "Parcel's public API does not expose a cancel endpoint, "
                 "so the shipment %s must be cancelled manually in the "
-                "My DHL Parcel portal. Odoo clears the tracking "
+                "DHL portal. Odoo clears the tracking "
                 "reference on the picking after cancellation, but the "
                 "value is preserved in this chatter note for later "
                 "lookup."
@@ -1095,7 +1095,7 @@ class DeliveryCarrier(models.Model):
                 "DHL did not accept the User ID + API Key combination.\n\n"
                 "User ID, API Key and Account ID are all in the right "
                 "format, but at least one of User ID or API Key does not "
-                "match what is currently active in My DHL Parcel -> "
+                "match what is currently active in the DHL portal -> "
                 "Settings -> API Keys. DHL's API on purpose does not tell "
                 "us which of the two is wrong.\n\n"
                 "DHL response: %s") % exc
