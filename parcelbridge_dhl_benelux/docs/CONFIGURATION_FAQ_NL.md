@@ -271,8 +271,12 @@ zending uit je MDP shipment-lijst wil verwijderen voor de netheid.
 
 **Verschijnen shipments die via de API aangemaakt zijn in het
 DHL-dashboard?**
-Dit hangt af van het account en moet met DHL bevestigd worden voor het
-specifieke contract.
+Ja voor productie-keys: shipments die via de API aangemaakt worden
+verschijnen in het DHL-portaal onder je account, precies alsof je
+ze manueel had ingevoerd. Sandbox-shipments verschijnen NIET in het
+productie-portaal (dat is net de bedoeling van sandbox: labels worden
+gegenereerd en tracker-codes teruggegeven, maar het pakket komt het
+DHL-netwerk nooit binnen en wordt niet gefactureerd).
 
 **Het portaal heeft een "save this customer"-tickbox wanneer je een
 zending invoert. Gebruikt de module die?**
