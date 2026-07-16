@@ -100,7 +100,7 @@ DHL technical contact when in doubt.
 
 **If you suspect a permission issue:**
 The roles on your token can be inspected by enabling debug logging on the
-`delivery_dhl_parcel` logger and inspecting the authentication response. Share
+`parcelbridge_dhl_benelux` logger and inspecting the authentication response. Share
 the list of roles you have with your DHL tech contact and ask which additional
 role activates the missing feature.
 

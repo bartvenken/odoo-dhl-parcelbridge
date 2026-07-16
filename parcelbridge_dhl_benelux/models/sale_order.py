@@ -13,7 +13,7 @@ class SaleOrder(models.Model):
         Method is defined by `website_sale`; if that module is not
         installed the call has no caller anyway, but the super() lookup
         would raise - guarded with try/except so an install of just
-        `delivery_dhl_parcel + stock_delivery` on a backend-only Odoo
+        `parcelbridge_dhl_benelux + stock_delivery` on a backend-only Odoo
         stays loadable."""
         try:
             carriers = super()._get_delivery_methods()

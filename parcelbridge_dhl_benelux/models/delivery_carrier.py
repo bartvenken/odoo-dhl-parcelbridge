@@ -107,13 +107,13 @@ class DeliveryCarrier(models.Model):
     # --- credentials (per carrier; multi-account ready) ---
     dhlparcel_user_id = fields.Char(
         "DHL User ID", copy=False,
-        groups="delivery_dhl_parcel.group_dhl_parcel_admin")
+        groups="parcelbridge_dhl_benelux.group_dhl_parcel_admin")
     dhlparcel_api_key = fields.Char(
         "DHL API Key", copy=False,
-        groups="delivery_dhl_parcel.group_dhl_parcel_admin")
+        groups="parcelbridge_dhl_benelux.group_dhl_parcel_admin")
     dhlparcel_account_id = fields.Char(
         "DHL Account ID", copy=False,
-        groups="delivery_dhl_parcel.group_dhl_parcel_admin",
+        groups="parcelbridge_dhl_benelux.group_dhl_parcel_admin",
         help="Short DHL account number, e.g. 08500001.")
 
     # --- behaviour ---
@@ -418,11 +418,11 @@ class DeliveryCarrier(models.Model):
                 new_env = api.Environment(
                     new_cr, self.env.uid, self.env.context)
                 new_env["ir.logging"].sudo().create({
-                    "name": "delivery_dhl_parcel",
+                    "name": "parcelbridge_dhl_benelux",
                     "type": "server",
                     "level": "WARNING" if is_error else "INFO",
                     "message": msg,
-                    "path": "delivery_dhl_parcel",
+                    "path": "parcelbridge_dhl_benelux",
                     "func": "dhlparcel_log_api",
                     "line": "0",
                     "dbname": new_cr.dbname,
