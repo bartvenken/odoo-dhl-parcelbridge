@@ -1,0 +1,644 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* delivery_dhl_parcel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-18 00:00+0000\n"
+"PO-Revision-Date: 2026-06-18 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__delivery_type__dhlparcel
+msgid "DHL Parcel (Benelux)"
+msgstr "DHL Parcel (Benelux)"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_parcel_type__envelope
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_line__parcel_type_consumer__envelope
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_tariff__parcel_type__envelope
+msgid "Envelope 50 to 500 g"
+msgstr "Envelope 50 to 500 g"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_parcel_type__xsmall
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_line__parcel_type_consumer__xsmall
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_tariff__parcel_type__xsmall
+msgid "Mailbox parcel"
+msgstr "Mailbox parcel"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_parcel_type__small
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_line__parcel_type_consumer__small
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_line__parcel_type_business__small
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_tariff__parcel_type__small
+msgid "Parcel up to 10 kg"
+msgstr "Parcel up to 10 kg"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_parcel_type__small_medium
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_line__parcel_type_consumer__small_medium
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_line__parcel_type_business__small_medium
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_tariff__parcel_type__small_medium
+msgid "Parcel up to 20 kg"
+msgstr "Parcel up to 20 kg"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_parcel_type__medium
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_line__parcel_type_consumer__medium
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_line__parcel_type_business__medium
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_tariff__parcel_type__medium
+msgid "Parcel up to 31 kg"
+msgstr "Parcel up to 31 kg"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_parcel_type__pallet
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_line__parcel_type_business__pallet
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__dhl_parcel_tariff__parcel_type__pallet
+msgid "Pallet up to 1000 kg"
+msgstr "Pallet up to 1000 kg"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_parcel_type__mix
+msgid "Mixed (pick parcels per shipment)"
+msgstr "Mixed (pick parcels per shipment)"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_parcel_type__open
+msgid "Operator picks at packing"
+msgstr "Operator picks at packing"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_pricing_mode__flat
+msgid "Flat price"
+msgstr "Flat price"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_pricing_mode__rule
+msgid "Weight-based rules"
+msgstr "Weight-based rules"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_user_id
+msgid "DHL User ID"
+msgstr "DHL User ID"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_api_key
+msgid "DHL API Key"
+msgstr "DHL API Key"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_account_id
+msgid "DHL Account ID"
+msgstr "DHL Account ID"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,help:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_account_id
+msgid "Short DHL account number, e.g. 08500001."
+msgstr "Short DHL account number, e.g. 08500001."
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_pricing_mode
+msgid "DHL pricing mode"
+msgstr "DHL pricing mode"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,help:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_pricing_mode
+msgid ""
+"The DHL Parcel API does not return live rates, so the customer price is set "
+"here: a flat amount, or the weight/price rules on the Pricing tab."
+msgstr ""
+"The DHL Parcel API does not return live rates, so the customer price is set "
+"here: a flat amount, or the weight/price rules on the Pricing tab."
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_flat_price
+msgid "DHL flat price"
+msgstr "DHL flat price"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_parcel_type
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_dhl_parcel_line__parcel_type_consumer
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_dhl_parcel_line__parcel_type_business
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_dhl_parcel_tariff__parcel_type
+msgid "Parcel type"
+msgstr "Parcel type"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,help:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_parcel_type
+msgid ""
+"The DHL parcel type for every shipment created through this shipping method. "
+"Create one shipping method per parcel type you offer. Pick 'Mixed' to "
+"combine several types in a single shipment — the delivery then exposes a "
+"DHL Parcels tab where you pick a type per parcel (just like the My DHL "
+"Parcel portal)."
+msgstr ""
+"The DHL parcel type for every shipment created through this shipping method. "
+"Create one shipping method per parcel type you offer. Pick 'Mixed' to "
+"combine several types in a single shipment — the delivery then exposes a "
+"DHL Parcels tab where you pick a type per parcel (just like the My DHL "
+"Parcel portal)."
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_default_weight
+msgid "Default weight (kg)"
+msgstr "Default weight (kg)"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,help:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_default_weight
+msgid ""
+"Used when a parcel's weight is 0 (e.g. products without a weight set). DHL "
+"refuses a 0 kg shipment, so this value is sent instead."
+msgstr ""
+"Used when a parcel's weight is 0 (e.g. products without a weight set). DHL "
+"refuses a 0 kg shipment, so this value is sent instead."
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_last_error
+msgid "Last DHL API error"
+msgstr "Last DHL API error"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_last_error_date
+msgid "Last error at"
+msgstr "Last error at"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_key_environment
+msgid "Detected key environment"
+msgstr "Detected key environment"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_key_environment__sandbox
+msgid "Sandbox"
+msgstr "Sandbox"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_key_environment__production
+msgid "Production"
+msgstr "Production"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "Production environment is set, but the API key is a sandbox key."
+msgstr "Production environment is set, but the API key is a sandbox key."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "Test environment is set, but the API key is a production key."
+msgstr "Test environment is set, but the API key is a production key."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "You cannot see or edit the DHL API credentials."
+msgstr "You cannot see or edit the DHL API credentials."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "No DHL API Key yet? Read this first."
+msgstr "No DHL API Key yet? Read this first."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid ""
+"API access is not part of a standard DHL eCommerce Benelux contract. Before "
+"you can create keys in the My DHL Parcel portal, DHL has to activate the "
+"API role on your account."
+msgstr ""
+"API access is not part of a standard DHL eCommerce Benelux contract. Before "
+"you can create keys in the My DHL Parcel portal, DHL has to activate the "
+"API role on your account."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid ""
+"How to request it: email your DHL contact (or DHL eCommerce support), "
+"mention your DHL customer number, and ask them to enable API access on "
+"your account so you can generate API keys via the portal. Until they "
+"confirm, the portal only shows a \"Connections\" page and no API Keys "
+"section - that is the signal that this step is not yet done. Once active, "
+"log into the portal, go to Settings > API Keys, create a key, and paste "
+"User ID, API Key and Account ID here."
+msgstr ""
+"How to request it: email your DHL contact (or DHL eCommerce support), "
+"mention your DHL customer number, and ask them to enable API access on "
+"your account so you can generate API keys via the portal. Until they "
+"confirm, the portal only shows a \"Connections\" page and no API Keys "
+"section - that is the signal that this step is not yet done. Once active, "
+"log into the portal, go to Settings > API Keys, create a key, and paste "
+"User ID, API Key and Account ID here."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid ""
+"Access to the DHL User ID, API Key and Account ID is restricted to members "
+"of the group \"DHL Parcel Administrator\". Your regular delivery-carrier "
+"permissions are not affected: you can still create, edit and use this "
+"carrier, validate deliveries and print labels. Only the credential fields "
+"themselves are hidden."
+msgstr ""
+"Access to the DHL User ID, API Key and Account ID is restricted to members "
+"of the group \"DHL Parcel Administrator\". Your regular delivery-carrier "
+"permissions are not affected: you can still create, edit and use this "
+"carrier, validate deliveries and print labels. Only the credential fields "
+"themselves are hidden."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid ""
+"To edit credentials yourself, ask an Odoo administrator to add you to the "
+"group via Settings > Users > (your user) > Access Rights > Other > DHL "
+"Parcel Administrator. Alternatively, an administrator can enter the "
+"credentials on this form directly."
+msgstr ""
+"To edit credentials yourself, ask an Odoo administrator to add you to the "
+"group via Settings > Users > (your user) > Access Rights > Other > DHL "
+"Parcel Administrator. Alternatively, an administrator can enter the "
+"credentials on this form directly."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid ""
+"Shipments created with this carrier will be validated by DHL but will not "
+"enter the network and will not be billed. Either switch the toggle at the "
+"top of this form to Test Environment, or replace the API key with a "
+"production key from My DHL Parcel."
+msgstr ""
+"Shipments created with this carrier will be validated by DHL but will not "
+"enter the network and will not be billed. Either switch the toggle at the "
+"top of this form to Test Environment, or replace the API key with a "
+"production key from My DHL Parcel."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid ""
+"Shipments created with this carrier will be real DHL shipments and will be "
+"billed. Either switch the toggle at the top of this form to Production "
+"Environment, or replace the API key with a sandbox key from My DHL Parcel."
+msgstr ""
+"Shipments created with this carrier will be real DHL shipments and will be "
+"billed. Either switch the toggle at the top of this form to Production "
+"Environment, or replace the API key with a sandbox key from My DHL Parcel."
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_last_test_at
+msgid "Last test at"
+msgstr "Last test at"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_last_test_status
+msgid "Last test status"
+msgstr "Last test status"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_delivery_carrier__dhlparcel_last_test_result
+msgid "Last test result"
+msgstr "Last test result"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_last_test_status__ok
+msgid "OK"
+msgstr "OK"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_last_test_status__warning
+msgid "Warning"
+msgstr "Warning"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields.selection,name:delivery_dhl_parcel.selection__delivery_carrier__dhlparcel_last_test_status__error
+msgid "Error"
+msgstr "Error"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "Last Test Result"
+msgstr "Last Test Result"
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid "Test Connection: OK"
+msgstr "Test Connection: OK"
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid "Test Connection: warning"
+msgstr "Test Connection: warning"
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid "Test Connection: failed"
+msgstr "Test Connection: failed"
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid "See Last Test Result on the form for the full report."
+msgstr "See Last Test Result on the form for the full report."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid "Credentials format check failed - see Last Test Result on the form for details."
+msgstr "Credentials format check failed - see Last Test Result on the form for details."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid "DHL rejected the credentials - see Last Test Result on the form for details."
+msgstr "DHL rejected the credentials - see Last Test Result on the form for details."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"Credentials have format problems:\n"
+"%s\n"
+"\n"
+"Fix these in the Credentials section, then click Test Connection again."
+msgstr ""
+"Credentials have format problems:\n"
+"%s\n"
+"\n"
+"Fix these in the Credentials section, then click Test Connection again."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"DHL did not accept the User ID + API Key combination.\n"
+"\n"
+"User ID, API Key and Account ID are all in the right format, but at least "
+"one of User ID or API Key does not match what is currently active in My DHL "
+"Parcel -> Settings -> API Keys. DHL's API on purpose does not tell us which "
+"of the two is wrong.\n"
+"\n"
+"DHL response: %s"
+msgstr ""
+"DHL did not accept the User ID + API Key combination.\n"
+"\n"
+"User ID, API Key and Account ID are all in the right format, but at least "
+"one of User ID or API Key does not match what is currently active in My DHL "
+"Parcel -> Settings -> API Keys. DHL's API on purpose does not tell us which "
+"of the two is wrong.\n"
+"\n"
+"DHL response: %s"
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid "DHL Parcel: connection test"
+msgstr "DHL Parcel: connection test"
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"No parcels are defined yet in the DHL Parcels tab of any delivery for this "
+"order — the shipping cost is currently 0.00.\n"
+"Run Add Shipping again once the warehouse has filled in the DHL Parcels tab "
+"to compute the correct price."
+msgstr ""
+"No parcels are defined yet in the DHL Parcels tab of any delivery for this "
+"order — the shipping cost is currently 0.00.\n"
+"Run Add Shipping again once the warehouse has filled in the DHL Parcels tab "
+"to compute the correct price."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"A DHL Parcel carrier with parcel type 'Mixed' cannot be published to the "
+"website: customers cannot fill in the per-parcel table at checkout. Use "
+"this carrier from the backend only (Add Shipping on a sale order), or "
+"pick a fixed parcel type to publish."
+msgstr ""
+"A DHL Parcel carrier with parcel type 'Mixed' cannot be published to the "
+"website: customers cannot fill in the per-parcel table at checkout. Use "
+"this carrier from the backend only (Add Shipping on a sale order), or "
+"pick a fixed parcel type to publish."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"Authentication OK.\n"
+"Key environment: %(env)s\n"
+"Business unit: %(bu)s\n"
+"Accounts on key: %(accounts)s\n"
+"Configured Account ID: %(account_id)s\n"
+"Roles: %(roles)s\n"
+"Token expires: %(exp)s\n"
+"Probe /parcel-types/business/BE: %(probe)s"
+msgstr ""
+"Authentication OK.\n"
+"Key environment: %(env)s\n"
+"Business unit: %(bu)s\n"
+"Accounts on key: %(accounts)s\n"
+"Configured Account ID: %(account_id)s\n"
+"Roles: %(roles)s\n"
+"Token expires: %(exp)s\n"
+"Probe /parcel-types/business/BE: %(probe)s"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_stock_picking__dhl_parcel_count
+msgid "Number of parcels"
+msgstr "Number of parcels"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,help:delivery_dhl_parcel.field_stock_picking__dhl_parcel_count
+msgid ""
+"Number of identical parcels in this shipment (multicollo). Ignored as soon "
+"as you use Put in Pack: the created packages then drive the piece count."
+msgstr ""
+"Number of identical parcels in this shipment (multicollo). Ignored as soon "
+"as you use Put in Pack: the created packages then drive the piece count."
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_stock_picking__dhl_parcel_line_ids
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_picking_form_dhl_parcel
+msgid "DHL Parcels"
+msgstr "DHL Parcels"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,help:delivery_dhl_parcel.field_stock_picking__dhl_parcel_line_ids
+msgid ""
+"Used only for DHL methods with parcel type 'Gemengd' (MIX): one row per "
+"parcel, type + qty + optional weight."
+msgstr ""
+"Used only for DHL methods with parcel type 'Mixed' (MIX): one row per "
+"parcel, type + qty + optional weight."
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_dhl_parcel_line__quantity
+msgid "Qty"
+msgstr "Qty"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_dhl_parcel_line__weight
+msgid "Weight (kg)"
+msgstr "Weight (kg)"
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,help:delivery_dhl_parcel.field_dhl_parcel_line__weight
+msgid "Optional. The carrier's default weight is used when blank."
+msgstr "Optional. The carrier's default weight is used when blank."
+
+#. module: delivery_dhl_parcel
+#: model:ir.model.fields,field_description:delivery_dhl_parcel.field_dhl_parcel_tariff__price
+msgid "Price per parcel"
+msgstr "Price per parcel"
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/dhl_parcel_line.py:0
+msgid ""
+"Envelope 50 to 500 g is only available for shipments to the Netherlands "
+"(destination: %s)."
+msgstr ""
+"Envelope 50 to 500 g is only available for shipments to the Netherlands "
+"(destination: %s)."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid "Pick a Parcel type on the DHL shipping method '%s'."
+msgstr "Pick a Parcel type on the DHL shipping method '%s'."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"DHL Parcel does not deliver to the following countries: %s.\n"
+"Remove them from the Countries field."
+msgstr ""
+"DHL Parcel does not deliver to the following countries: %s.\n"
+"Remove them from the Countries field."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"The parcel type '%(ptype)s' is only available for shipments to %(allowed)s.\n"
+"Remove these countries from the Countries field, or pick a different parcel "
+"type: %(wrong)s"
+msgstr ""
+"The parcel type '%(ptype)s' is only available for shipments to %(allowed)s.\n"
+"Remove these countries from the Countries field, or pick a different parcel "
+"type: %(wrong)s"
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"The parcel type '%(ptype)s' is only available for private recipients. "
+"'%(partner)s' is a company."
+msgstr ""
+"The parcel type '%(ptype)s' is only available for private recipients. "
+"'%(partner)s' is a company."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"The parcel type '%(ptype)s' is only available for business recipients. "
+"'%(partner)s' is a private individual."
+msgstr ""
+"The parcel type '%(ptype)s' is only available for business recipients. "
+"'%(partner)s' is a private individual."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"Add at least one parcel in the DHL Parcels tab on this delivery, or pick a "
+"DHL shipping method with a fixed parcel type."
+msgstr ""
+"Add at least one parcel in the DHL Parcels tab on this delivery, or pick a "
+"DHL shipping method with a fixed parcel type."
+
+#. module: delivery_dhl_parcel
+#. odoo-python
+#: code:addons/delivery_dhl_parcel/models/delivery_carrier.py:0
+msgid ""
+"One of the parcels in the DHL Parcels tab has no type. Set the type before "
+"validating."
+msgstr ""
+"One of the parcels in the DHL Parcels tab has no type. Set the type before "
+"validating."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "DHL Parcel"
+msgstr "DHL Parcel"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "Credentials"
+msgstr "Credentials"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "Shipment"
+msgstr "Shipment"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "Status"
+msgstr "Status"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "DHL Tariffs"
+msgstr "DHL Tariffs"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "Test Connection"
+msgstr "Test Connection"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid "Clear last error"
+msgstr "Clear last error"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_picking_form_dhl_parcel
+msgid "Export DHL debug bundle"
+msgstr "Export DHL debug bundle"
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_picking_form_dhl_parcel
+msgid ""
+"One row per parcel, just like in the My DHL Parcel portal. The type list "
+"adapts to the recipient (private person vs company). Weight is optional; "
+"the carrier's default weight is used when blank."
+msgstr ""
+"One row per parcel, just like in the My DHL Parcel portal. The type list "
+"adapts to the recipient (private person vs company). Weight is optional; "
+"the carrier's default weight is used when blank."
+
+#. module: delivery_dhl_parcel
+#: model_terms:ir.ui.view,arch_db:delivery_dhl_parcel.view_delivery_carrier_form_dhlparcel
+msgid ""
+"Set a price per parcel type, as charged to the customer. For MIX shipping "
+"methods the shipping cost is computed as sum(qty × tariff) over all the "
+"parcels on the delivery. Re-run Add Shipping on the sales order after "
+"filling in the DHL Parcels tab to refresh the price on the order."
+msgstr ""
+"Set a price per parcel type, as charged to the customer. For MIX shipping "
+"methods the shipping cost is computed as sum(qty × tariff) over all the "
+"parcels on the delivery. Re-run Add Shipping on the sales order after "
+"filling in the DHL Parcels tab to refresh the price on the order."

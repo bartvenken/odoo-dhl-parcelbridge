@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_delivery_carrier_form_dhlparcel" model="ir.ui.view">
+    <field name="name">delivery.carrier.form.dhlparcel</field>
+    <field name="model">delivery.carrier</field>
+    <field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
+    <field name="arch" type="xml">
+
+      <!-- Make the native Pricing (price rules) page available in rule mode -->
+      <xpath expr="//notebook/page[@name='pricing']" position="attributes">
+        <attribute name="invisible">
+          delivery_type != 'base_on_rule' and not (delivery_type == 'dhlparcel' and dhlparcel_pricing_mode == 'rule')
+        </attribute>
+      </xpath>
+
+      <!-- Filter Countries dropdown to DHL-supported destinations
+           (and further narrow it when a restricted default parcel type is set). -->
+      <xpath expr="//field[@name='country_ids']" position="before">
+        <field name="dhlparcel_allowed_country_ids" invisible="1"/>
+      </xpath>
+      <xpath expr="//field[@name='country_ids']" position="attributes">
+        <attribute name="domain">[('id', 'in', dhlparcel_allowed_country_ids)]</attribute>
+      </xpath>
+
+      <!-- DHL Parcel configuration page -->
+      <xpath expr="//notebook" position="inside">
+        <page string="DHL Parcel" name="dhlparcel"
+              invisible="delivery_type != 'dhlparcel'">
+          <field name="dhlparcel_key_environment" invisible="1"/>
+          <div class="alert alert-danger" role="alert"
+               invisible="not (prod_environment and dhlparcel_key_environment == 'sandbox')">
+            <strong>Production environment is set, but the API key is a sandbox key.</strong>
+            <p>
+              Shipments created with this carrier will be validated by DHL but will not enter the network and will not be billed. Either switch the toggle at the top of this form to Test Environment, or replace the API key with a production key from My DHL Parcel.
+            </p>
+          </div>
+          <div class="alert alert-warning" role="alert"
+               invisible="not (not prod_environment and dhlparcel_key_environment == 'production')">
+            <strong>Test environment is set, but the API key is a production key.</strong>
+            <p>
+              Shipments created with this carrier will be real DHL shipments and will be billed. Either switch the toggle at the top of this form to Production Environment, or replace the API key with a sandbox key from My DHL Parcel.
+            </p>
+          </div>
+          <div class="alert alert-info" role="alert"
+               groups="!delivery_dhl_parcel.group_dhl_parcel_admin">
+            <strong>You cannot see or edit the DHL API credentials.</strong>
+            <p>
+              Access to the DHL User ID, API Key and Account ID is restricted to members of the group "DHL Parcel Administrator". Your regular delivery-carrier permissions are not affected: you can still create, edit and use this carrier, validate deliveries and print labels. Only the credential fields themselves are hidden.
+            </p>
+            <p>
+              To edit credentials yourself, ask an Odoo administrator to add you to the group via Settings > Users > (your user) > Access Rights > Other > DHL Parcel Administrator. Alternatively, an administrator can enter the credentials on this form directly.
+            </p>
+          </div>
+          <div class="alert alert-warning" role="alert"
+               groups="delivery_dhl_parcel.group_dhl_parcel_admin"
+               invisible="dhlparcel_api_key">
+            <strong>No DHL API Key yet? Read this first.</strong>
+            <p>
+              API access is not part of a standard DHL eCommerce Benelux contract. Before you can create keys in the My DHL Parcel portal, DHL has to activate the API role on your account.
+            </p>
+            <p>
+              How to request it: email your DHL contact (or DHL eCommerce support), mention your DHL customer number, and ask them to enable API access on your account so you can generate API keys via the portal. Until they confirm, the portal only shows a "Connections" page and no API Keys section - that is the signal that this step is not yet done. Once active, log into the portal, go to Settings &gt; API Keys, create a key, and paste User ID, API Key and Account ID here.
+            </p>
+          </div>
+          <group string="Credentials"
+                 groups="delivery_dhl_parcel.group_dhl_parcel_admin">
+            <group>
+              <field name="dhlparcel_user_id"/>
+              <field name="dhlparcel_account_id"/>
+            </group>
+            <group>
+              <field name="dhlparcel_api_key" password="True"/>
+              <button name="action_dhlparcel_test_connection" type="object"
+                      string="Test Connection" icon="fa-plug"
+                      class="btn-link"
+                      help="Authenticate against DHL and probe a read-only endpoint to confirm the credentials work."/>
+            </group>
+          </group>
+          <group string="Shipment">
+            <group>
+              <field name="dhlparcel_parcel_type"
+                     required="delivery_type == 'dhlparcel'"/>
+              <field name="dhlparcel_default_weight"/>
+            </group>
+            <group>
+              <field name="dhlparcel_pricing_mode"
+                     invisible="dhlparcel_parcel_type == 'MIX'"/>
+              <field name="dhlparcel_flat_price"
+                     invisible="dhlparcel_pricing_mode != 'flat' or dhlparcel_parcel_type == 'MIX'"/>
+              <p class="text-muted" colspan="2"
+                 invisible="dhlparcel_parcel_type == 'MIX'">
+                The DHL Parcel API does not return live shipping rates, so the
+                customer price is set here. Choose <b>Flat price</b> for a fixed
+                amount, or <b>Weight-based rules</b> and define tiers on the
+                <b>Pricing</b> tab (use <code>weight</code> as the variable).
+              </p>
+            </group>
+          </group>
+          <group string="Contract check">
+            <p class="text-muted" colspan="2">
+              Which of the DHL products this carrier resolves to (per
+              destination country and recipient type) are actually
+              active on your DHL contract? Runs a live probe against
+              DHL's API. Countries flagged NOT IN CONTRACT will fail at
+              label creation - contact DHL to activate the missing
+              product on your account, or uncheck those countries on
+              the Destination Availability tab of this carrier.
+            </p>
+            <button name="action_dhlparcel_verify_contract" type="object"
+                    string="Verify Contract" icon="fa-check-square-o"
+                    class="btn-link"
+                    help="Iterate the enabled destination countries and check whether the DHL product this carrier would use for each route is available on your DHL contract."/>
+          </group>
+          <group string="Last Contract Check"
+                 invisible="not dhlparcel_last_contract_check_at">
+            <field name="dhlparcel_last_contract_check_at"/>
+            <field name="dhlparcel_last_contract_check_status"
+                   widget="badge"
+                   decoration-success="dhlparcel_last_contract_check_status == 'ok'"
+                   decoration-warning="dhlparcel_last_contract_check_status == 'warning'"
+                   decoration-danger="dhlparcel_last_contract_check_status == 'error'"/>
+            <field name="dhlparcel_last_contract_check_result"/>
+          </group>
+          <group string="Last Test Result"
+                 invisible="not dhlparcel_last_test_at">
+            <field name="dhlparcel_last_test_at"/>
+            <field name="dhlparcel_last_test_status"
+                   widget="badge"
+                   decoration-success="dhlparcel_last_test_status == 'ok'"
+                   decoration-warning="dhlparcel_last_test_status == 'warning'"
+                   decoration-danger="dhlparcel_last_test_status == 'error'"/>
+            <field name="dhlparcel_last_test_result"/>
+          </group>
+          <group string="Status" invisible="not dhlparcel_last_error">
+            <field name="dhlparcel_last_error_date"/>
+            <field name="dhlparcel_last_error"/>
+            <button name="action_dhlparcel_clear_last_error" type="object"
+                    string="Clear last error" icon="fa-eraser"
+                    class="btn-link"/>
+          </group>
+        </page>
+        <page string="DHL Tariffs" name="dhlparcel_tariffs"
+              invisible="delivery_type != 'dhlparcel' or dhlparcel_parcel_type != 'MIX'">
+          <field name="dhlparcel_tariff_ids">
+            <tree editable="bottom">
+              <field name="parcel_type" required="1"/>
+              <field name="price" required="1"/>
+            </tree>
+          </field>
+          <p class="text-muted">
+            Set a price per parcel type, as charged to the customer.
+            For MIX shipping methods the shipping cost is computed as
+            <code>sum(qty × tariff)</code> over all the parcels on the
+            delivery. Re-run <b>Add Shipping</b> on the sales order after
+            filling in the DHL Parcels tab to refresh the price on the
+            order.
+          </p>
+        </page>
+      </xpath>
+
+    </field>
+  </record>
+
+</odoo>
