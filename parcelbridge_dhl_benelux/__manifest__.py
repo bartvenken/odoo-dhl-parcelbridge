@@ -96,9 +96,6 @@
           default and has to be requested from your DHL contact;
           typically granted within one business day.
         - Ships from Belgium, the Netherlands or Luxembourg.
-
-        Not affiliated with or endorsed by DHL. DHL is a trademark of
-        Deutsche Post AG.
     """,
     'author': "Bart Venken",
     'website': "https://www.bartvenken.be/odoo-dhl-parcelbridge/",
@@ -108,7 +105,7 @@
     'currency': 'EUR',
     'support': 'dhlparcel.odoo@gmail.com',
     'images': ['static/description/main_screenshot.png'],
-    'version': '17.0.1.0.6',
+    'version': '17.0.1.0.7',
     'depends': ['stock_delivery', 'sale'],
     'data': [
         'security/dhl_parcel_security.xml',
