@@ -50,7 +50,3 @@ Full documentation lives on the module homepage:
 ## Support
 
 Email: [dhlparcel.odoo@gmail.com](mailto:dhlparcel.odoo@gmail.com) · include the debug bundle from the affected delivery and we can usually diagnose in one round-trip.
-
----
-
-*Not affiliated with or endorsed by DHL. DHL is a trademark of Deutsche Post AG.*
