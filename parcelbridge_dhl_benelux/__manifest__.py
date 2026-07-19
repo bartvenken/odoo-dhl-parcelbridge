@@ -101,11 +101,11 @@
     'website': "https://www.bartvenken.be/odoo-dhl-parcelbridge/",
     'license': 'OPL-1',
     'category': 'Inventory/Delivery',
-    'price': 79.00,
+    'price': 49.00,
     'currency': 'EUR',
     'support': 'dhlparcel.odoo@gmail.com',
     'images': ['static/description/main_screenshot.png'],
-    'version': '17.0.1.0.7',
+    'version': '17.0.1.0.8',
     'depends': ['stock_delivery', 'sale'],
     'data': [
         'security/dhl_parcel_security.xml',
