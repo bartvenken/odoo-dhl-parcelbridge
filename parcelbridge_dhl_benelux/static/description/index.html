@@ -1,115 +1,43 @@
-<div style="font-family: Arial, sans-serif;">
-<section style="background: #1e3a5f; padding: 60px 40px; text-align: center;">
-  <h1 style="font-size: 44px; margin: 0 0 15px; font-weight: 700; letter-spacing: -0.5px; color: #1e3a5f;">ParcelBridge for DHL eCommerce Benelux</h1>
-  <p style="font-size: 20px; margin: 0 0 8px; color: #333333;">Create real shipments from Odoo - labels and trackers on delivery validation.</p>
-  <p style="font-size: 15px; margin: 0; color: #555555;">Backend-first carrier integration for DHL eCommerce Benelux (BE / NL / LU).</p>
-</section>
+<div style="font-family: Arial, sans-serif; max-width: 780px; margin: 0 auto; padding: 40px 30px; color: #222; line-height: 1.6;">
 
-<section style="padding: 50px 40px; background: #fff;">
-  <h2 style="font-size: 26px; color: #1e3a5f; margin: 0 0 30px; text-align: center;">What it does</h2>
-  <table style="width: 100%; border-collapse: collapse;">
-    <tr>
-      <td style="width: 33%; padding: 20px; vertical-align: top; text-align: center;">
-        <div style="font-size: 44px; margin-bottom: 10px;">&#128230;</div>
-        <h3 style="color: #1e3a5f; margin: 0 0 8px; font-size: 17px;">Real shipments</h3>
-        <p style="color: #555; margin: 0; font-size: 14px; line-height: 1.5;">Validating a delivery triggers a POST to <code>api-gw.dhlparcel.nl/shipments</code>. Label PDF and tracker come back and are attached to the picking automatically.</p>
-      </td>
-      <td style="width: 33%; padding: 20px; vertical-align: top; text-align: center;">
-        <div style="font-size: 44px; margin-bottom: 10px;">&#128373;</div>
-        <h3 style="color: #1e3a5f; margin: 0 0 8px; font-size: 17px;">Sandbox / production detection</h3>
-        <p style="color: #555; margin: 0; font-size: 14px; line-height: 1.5;">Every save decodes the JWT and reads the <code>sandbox</code> claim. A red banner appears if a test key ends up in a production carrier - no accidental fake shipments.</p>
-      </td>
-      <td style="width: 33%; padding: 20px; vertical-align: top; text-align: center;">
-        <div style="font-size: 44px; margin-bottom: 10px;">&#128736;</div>
-        <h3 style="color: #1e3a5f; margin: 0 0 8px; font-size: 17px;">Support-friendly</h3>
-        <p style="color: #555; margin: 0; font-size: 14px; line-height: 1.5;">One-click debug bundle exports the full DHL context for any delivery (config, recipient, payload, last error) with credentials redacted - send it to support and be done.</p>
-      </td>
-    </tr>
-  </table>
-</section>
+<h1 style="font-size: 30px; color: #1e3a5f; margin: 0 0 4px; font-weight: 700;">Labels &amp; Tracking for DHL eCommerce Benelux</h1>
+<p style="font-size: 15px; color: #555; margin: 0 0 32px;">Odoo delivery-method module. Creates the DHL label and tracker(s) when a delivery is validated.</p>
 
-<section style="padding: 50px 40px; background: #f7f9fc;">
-  <h2 style="font-size: 26px; color: #1e3a5f; margin: 0 0 25px; text-align: center;">Key features</h2>
-  <ul style="max-width: 780px; margin: 0 auto; padding-left: 22px; color: #333; font-size: 15px; line-height: 1.9;">
-    <li><strong>Native <code>delivery.carrier</code> provider</strong> (<code>delivery_type = 'dhlparcel'</code>) - behaves like any other Odoo carrier: works with sales orders, Add Shipping wizard, checkout, backorders.</li>
-    <li><strong>All DHL Parcel product types</strong> supported: Envelope, Mailbox parcel, Parcel up to 10 / 20 / 31 kg, Pallet up to 1000 kg, plus <em>Mixed</em> and <em>Operator picks at packing</em> for multi-type or open-choice flows.</li>
-    <li><strong>Multicollo</strong> via a "Number of parcels" field on the delivery, or via native Odoo <em>Put in Pack</em> for accurate per-box weights.</li>
-    <li><strong>Recipient-aware</strong> filtering: consumer-only carriers (Envelope, Mailbox) auto-hidden for business customers, and vice versa - on both backend Add Shipping and webshop checkout.</li>
-    <li><strong>Test Connection</strong> button + persistent "Last Test Result" section on the carrier - no more digging through server logs to check if credentials are alive.</li>
-    <li><strong>Verify Contract</strong> button: probes DHL's <code>/products</code> endpoint for each enabled destination country and recipient type, and reports which routes are covered by your DHL contract. Missing products (e.g. no CON2C activated for UK consumer) are flagged before they cause a rejected shipment.</li>
-    <li><strong>Debug logging</strong> hooked on Odoo's native <em>Debug requests</em> toggle. Every API call written to Settings &gt; Technical &gt; Logging, with credentials redacted.</li>
-    <li><strong>Access control</strong>: API credentials restricted to a dedicated <em>DHL Parcel Administrator</em> group. Regular shipping-managers can use carriers without seeing keys.</li>
-    <li><strong>4 languages included</strong>: English, Dutch, French, German.</li>
-    <li><strong>Every DHL error surfaced</strong> in a persistent field on the carrier + in Odoo's log - no silent failures.</li>
-    <li><strong>OPL-1 license</strong>, source-readable, redistribution not allowed.</li>
-  </ul>
-</section>
+<h2 style="font-size: 18px; color: #1e3a5f; margin: 32px 0 10px;">What it does</h2>
+<ul style="padding-left: 22px; margin: 0 0 20px;">
+  <li>Native <code>delivery.carrier</code> provider integrated with sale orders, Add Shipping wizard, website checkout and backorders.</li>
+  <li>All DHL parcel types: Envelope, Mailbox parcel, Parcel up to 10 / 20 / 31 kg, Pallet up to 1000 kg. Plus Mixed and Operator-picks-at-packing variants.</li>
+  <li>International DHL products (Parcel Connect, Europlus International, Parcel Connect 2C, Europlus Pallet) resolved automatically per destination country and recipient type.</li>
+  <li>Customs declaration added automatically for non-EU shipments (United Kingdom, Switzerland, Norway).</li>
+  <li>Multicollo via the Number of parcels field on the delivery, or via native Put in Pack for per-box weights.</li>
+  <li>Recipient-aware carrier filtering: consumer-only carriers hidden from business customers, business-only carriers hidden from consumers.</li>
+  <li>Test Connection button: authenticates against DHL, reports account, roles and token expiry.</li>
+  <li>Verify Contract button: for each enabled destination country and recipient type, checks whether the DHL product the module would use is active on your DHL contract.</li>
+  <li>Sandbox / production detection: warns if a test key is used in a carrier configured as production.</li>
+  <li>Debug bundle export on each delivery: JSON export of the full context with credentials redacted.</li>
+  <li>Access control: API credentials restricted to a dedicated <em>DHL Parcel Administrator</em> group.</li>
+  <li>Available in English, Dutch, French and German.</li>
+  <li>OPL-1 license (source-readable, redistribution not allowed).</li>
+</ul>
 
-<section style="padding: 50px 40px; background: #fff;">
-  <h2 style="font-size: 26px; color: #1e3a5f; margin: 0 0 25px; text-align: center;">How it works</h2>
-  <table style="width: 100%; max-width: 780px; margin: 0 auto; border-collapse: collapse;">
-    <tr>
-      <td style="width: 40px; padding: 15px 10px; vertical-align: top; text-align: center;">
-        <div style="width: 32px; height: 32px; background: #1e3a5f; color: #fff; border-radius: 50%; line-height: 32px; font-weight: 700; margin: 0 auto;">1</div>
-      </td>
-      <td style="padding: 15px 10px; color: #333; font-size: 15px; line-height: 1.6;">
-        Install the module. A new provider "ParcelBridge for DHL eCommerce Benelux" is added to the shipping-method form.
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 40px; padding: 15px 10px; vertical-align: top; text-align: center;">
-        <div style="width: 32px; height: 32px; background: #1e3a5f; color: #fff; border-radius: 50%; line-height: 32px; font-weight: 700; margin: 0 auto;">2</div>
-      </td>
-      <td style="padding: 15px 10px; color: #333; font-size: 15px; line-height: 1.6;">
-        Create one shipping method per DHL parcel type you offer, and enter your DHL User ID + API Key + Account ID.
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 40px; padding: 15px 10px; vertical-align: top; text-align: center;">
-        <div style="width: 32px; height: 32px; background: #1e3a5f; color: #fff; border-radius: 50%; line-height: 32px; font-weight: 700; margin: 0 auto;">3</div>
-      </td>
-      <td style="padding: 15px 10px; color: #333; font-size: 15px; line-height: 1.6;">
-        Click <em>Test Connection</em> to confirm the credentials, then <em>Verify Contract</em> to check that your DHL account has the right products active for the destinations you enabled. Both write a persistent report on the carrier form.
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 40px; padding: 15px 10px; vertical-align: top; text-align: center;">
-        <div style="width: 32px; height: 32px; background: #1e3a5f; color: #fff; border-radius: 50%; line-height: 32px; font-weight: 700; margin: 0 auto;">4</div>
-      </td>
-      <td style="padding: 15px 10px; color: #333; font-size: 15px; line-height: 1.6;">
-        On any sale order, click <em>Add Shipping</em> and pick your DHL method. Confirm.
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 40px; padding: 15px 10px; vertical-align: top; text-align: center;">
-        <div style="width: 32px; height: 32px; background: #1e3a5f; color: #fff; border-radius: 50%; line-height: 32px; font-weight: 700; margin: 0 auto;">5</div>
-      </td>
-      <td style="padding: 15px 10px; color: #333; font-size: 15px; line-height: 1.6;">
-        Validate the delivery. The module POSTs to DHL, receives a multi-page label PDF and one tracker per piece, attaches the PDF, stores the trackers. Done.
-      </td>
-    </tr>
-  </table>
-</section>
+<h2 style="font-size: 18px; color: #1e3a5f; margin: 32px 0 10px;">How to use</h2>
+<ol style="padding-left: 22px; margin: 0 0 20px;">
+  <li>Install the module.</li>
+  <li>Create a shipping method: provider = <em>Labels &amp; Tracking for DHL eCommerce Benelux</em>. Fill in User ID, API Key, Account ID, pick a parcel type.</li>
+  <li>Click <em>Test Connection</em> to confirm the credentials. Click <em>Verify Contract</em> to check the destinations against your DHL contract.</li>
+  <li>Add Shipping on a sale order, pick the method, confirm.</li>
+  <li>Validate the delivery. Label PDF and tracker(s) are attached to the picking automatically.</li>
+</ol>
 
-<section style="padding: 50px 40px; background: #f7f9fc;">
-  <h2 style="font-size: 26px; color: #1e3a5f; margin: 0 0 25px; text-align: center;">Requirements</h2>
-  <ul style="max-width: 780px; margin: 0 auto; padding-left: 22px; color: #333; font-size: 15px; line-height: 1.9;">
-    <li><strong>Odoo 17</strong> (community or enterprise). Separate builds available for 18 and 19.</li>
-    <li>A <strong>DHL eCommerce Benelux</strong> account with API access activated on the contract (ask your DHL contact if unsure - API access is not the default, and it needs to be enabled by DHL before you can create keys in the DHL portal).</li>
-    <li>Ships from Belgium, the Netherlands or Luxembourg. Delivers to any of the 31 destinations supported by DHL Parcel.</li>
-  </ul>
-</section>
+<h2 style="font-size: 18px; color: #1e3a5f; margin: 32px 0 10px;">Requirements</h2>
+<ul style="padding-left: 22px; margin: 0 0 20px;">
+  <li>Odoo 17.0, 18.0 or 19.0 (community or enterprise) with <code>stock_delivery</code> and <code>sale</code>.</li>
+  <li>An active DHL eCommerce Benelux account with API access activated on the contract. API access is not enabled by default; request it from your DHL contact.</li>
+  <li>Sender in Belgium, the Netherlands or Luxembourg.</li>
+</ul>
 
-<section style="padding: 50px 40px; background: #fff;">
-  <h2 style="font-size: 26px; color: #1e3a5f; margin: 0 0 20px; text-align: center;">Documentation &amp; support</h2>
-  <p style="max-width: 700px; margin: 0 auto 18px; text-align: center; color: #333; font-size: 15px; line-height: 1.6;">
-    Full user guide (English + Nederlands) and configuration &amp; FAQ available at
-    <a href="https://www.bartvenken.be/odoo-dhl-parcelbridge/" style="color: #1e3a5f; text-decoration: none; font-weight: 600;">bartvenken.be/odoo-dhl-parcelbridge</a>
-    - read online or download as PDF.
-  </p>
-  <p style="max-width: 700px; margin: 0 auto; text-align: center; color: #333; font-size: 15px; line-height: 1.6;">
-    Questions or issues? Email <a href="mailto:dhlparcel.odoo@gmail.com" style="color: #1e3a5f; text-decoration: none; font-weight: 600;">dhlparcel.odoo@gmail.com</a>. Include the debug bundle export from the affected delivery and we can usually diagnose in one round-trip.
-  </p>
-</section>
+<h2 style="font-size: 18px; color: #1e3a5f; margin: 32px 0 10px;">Documentation and support</h2>
+<p style="margin: 0 0 10px;">User guide, Handleiding (NL), Configuration and FAQ are available at <a href="https://www.bartvenken.be/odoo-dhl-parcelbridge/" style="color: #1e3a5f;">bartvenken.be/odoo-dhl-parcelbridge</a>.</p>
+<p style="margin: 0;">Support: <a href="mailto:dhlparcel.odoo@gmail.com" style="color: #1e3a5f;">dhlparcel.odoo@gmail.com</a>.</p>
 
 </div>
