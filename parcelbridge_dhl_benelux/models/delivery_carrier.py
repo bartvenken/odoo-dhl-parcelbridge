@@ -99,7 +99,7 @@ class DeliveryCarrier(models.Model):
     _inherit = "delivery.carrier"
 
     delivery_type = fields.Selection(
-        selection_add=[("dhlparcel", "ParcelBridge for DHL eCommerce Benelux")],
+        selection_add=[("dhlparcel", "Labels & Tracking for DHL eCommerce Benelux")],
         ondelete={"dhlparcel": lambda recs: recs.write(
             {"delivery_type": "fixed", "fixed_price": 0})},
     )

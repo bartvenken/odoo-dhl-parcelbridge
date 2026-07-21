@@ -1,4 +1,4 @@
-# ParcelBridge for DHL eCommerce Benelux: Configuratie en FAQ
+# Labels & Tracking for DHL eCommerce Benelux: Configuratie en FAQ
 
 Dit document beschrijft alles wat geconfigureerd moet worden om de module te
 laten werken, welke data in Odoo hij nodig heeft, en de vragen die het meest
@@ -31,10 +31,10 @@ Maak **één verzendmethode per parceltype** aan dat je wil aanbieden
 (Brievenbuspakket, Pakket tot 10 kg, Pakket tot 20 kg, ...). Elke methode
 staat voor één vast DHL-parceltype met zijn eigen prijs.
 
-1. Installeer de module **ParcelBridge for DHL eCommerce Benelux**.
+1. Installeer de module **Labels & Tracking for DHL eCommerce Benelux**.
 2. Ga naar **Inventory → Configuration → Shipping Methods** en maak een
    nieuwe aan.
-3. Zet **Provider** op **ParcelBridge for DHL eCommerce Benelux**. Een tab
+3. Zet **Provider** op **Labels & Tracking for DHL eCommerce Benelux**. Een tab
    **DHL Parcel** verschijnt.
 4. Vul op die tab in:
    - **Credentials**: User ID, API Key, Account ID.

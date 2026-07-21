@@ -1,7 +1,7 @@
-# ParcelBridge for DHL eCommerce Benelux - User Guide
+# Labels & Tracking for DHL eCommerce Benelux - User Guide
 
 This guide covers how to install, configure and use the
-**ParcelBridge for DHL eCommerce Benelux** module in the day-to-day
+**Labels & Tracking for DHL eCommerce Benelux** module in the day-to-day
 Odoo workflow.
 
 > **Module version:** 17.0.1.0.0 / 18.0.1.0.0 / 19.0.1.0.0 (functionally identical)
@@ -66,10 +66,10 @@ The module does not:
 For those who want to get started immediately. Five steps from zero to
 your first label:
 
-1. **Install** the module via Apps → search *ParcelBridge for DHL* →
+1. **Install** the module via Apps → search *Labels & Tracking for DHL* →
    Install.
 2. Go to **Inventory → Configuration → Shipping Methods → New**.
-3. Provider = **ParcelBridge for DHL eCommerce Benelux**. A "DHL Parcel" tab appears.
+3. Provider = **Labels & Tracking for DHL eCommerce Benelux**. A "DHL Parcel" tab appears.
 4. On that tab: fill in **User ID**, **API Key**, **Account ID** (see
    section 4 for where to get them). Pick a **Parcel type** (e.g.
    *Parcel up to 10kg*) and set a **Flat price**. Select **Countries**
@@ -223,7 +223,7 @@ deliveries.
 ### Upgrading the module after an update
 
 Whenever you pull a new version of the module (git pull or marketplace
-update), go to **Apps → ParcelBridge for DHL eCommerce Benelux → Upgrade**. A regular server restart isn't enough if new fields or models were
+update), go to **Apps → Labels & Tracking for DHL eCommerce Benelux → Upgrade**. A regular server restart isn't enough if new fields or models were
 added.
 
 ### Access control: who can see the API credentials?
@@ -308,7 +308,7 @@ types: add a **DHL Mixed** method as well, see further.
 
 1. Go to **Inventory → Configuration → Shipping Methods → New**.
 2. Give the method a recognisable name (e.g. *DHL Parcel up to 10kg*).
-3. Provider = **ParcelBridge for DHL eCommerce Benelux**. A **DHL Parcel** tab appears.
+3. Provider = **Labels & Tracking for DHL eCommerce Benelux**. A **DHL Parcel** tab appears.
 4. On the DHL Parcel tab:
    - **Credentials** - User ID, API Key, Account ID. The same three
      values for all your DHL methods if they share the same DHL

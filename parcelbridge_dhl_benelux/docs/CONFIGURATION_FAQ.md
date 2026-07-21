@@ -1,4 +1,4 @@
-# ParcelBridge for DHL eCommerce Benelux: Configuration and FAQ
+# Labels & Tracking for DHL eCommerce Benelux: Configuration and FAQ
 
 This document lists everything that must be configured for the module to work,
 the data in Odoo it depends on, and the questions that come up most often. It is
@@ -29,9 +29,9 @@ Create **one shipping method per parcel type** you want to offer (Mailbox
 parcel, Parcel up to 10 kg, Parcel up to 20 kg, ...). Each method
 represents one fixed DHL parcel type with its own pricing.
 
-1. Install the module **ParcelBridge for DHL eCommerce Benelux**.
+1. Install the module **Labels & Tracking for DHL eCommerce Benelux**.
 2. Go to **Inventory → Configuration → Shipping Methods** and create a new one.
-3. Set **Provider** to **ParcelBridge for DHL eCommerce Benelux**. A **DHL Parcel** tab appears.
+3. Set **Provider** to **Labels & Tracking for DHL eCommerce Benelux**. A **DHL Parcel** tab appears.
 4. On that tab, fill in:
    - **Credentials**: User ID, API Key, Account ID.
    - **Parcel type** (required): the DHL type for all shipments under this

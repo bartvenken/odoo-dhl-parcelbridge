@@ -1,22 +1,20 @@
 {
-    'name': "ParcelBridge for DHL eCommerce Benelux",
+    'name': "Labels & Tracking for DHL eCommerce Benelux",
     'summary': "Ship from Odoo through DHL eCommerce Benelux - labels on delivery validation, verify contract per destination.",
     'description': """
-        ParcelBridge is a native Odoo delivery-method plugin for
-        DHL eCommerce Benelux (formerly DHL Parcel Benelux). It turns
-        the DHL Parcel API (api-gw.dhlparcel.nl) into a first-class
-        delivery.carrier provider so shipments, labels and trackers
-        flow automatically through the standard Odoo shipping workflow.
+        Odoo delivery-method module for DHL eCommerce Benelux. Uses
+        the DHL Parcel API (api-gw.dhlparcel.nl) as a delivery.carrier
+        provider. Creates a shipment and fetches the label PDF plus
+        tracker(s) when a delivery is validated in Odoo.
 
-        Suitable for Odoo webshops and B2B implementations shipping
-        parcels from Belgium, the Netherlands or Luxembourg to any of
-        the 31 destinations supported by DHL eCommerce Benelux
-        (Belgium, Netherlands, Luxembourg, Germany, France, United
-        Kingdom, Austria, Italy, Spain, Portugal, Poland, Denmark,
-        Sweden, Finland, Ireland, Czech Republic, Hungary, Slovenia,
-        Slovakia, Romania, Bulgaria, Croatia, Greece, Estonia, Latvia,
-        Lithuania, Switzerland, Norway, Liechtenstein, Monaco and
-        San Marino).
+        For senders in Belgium, the Netherlands or Luxembourg. Ships
+        to the 31 destinations covered by DHL eCommerce Benelux:
+        Austria, Belgium, Bulgaria, Croatia, Czech Republic, Denmark,
+        Estonia, Finland, France, Germany, Greece, Hungary, Ireland,
+        Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Monaco,
+        Netherlands, Norway, Poland, Portugal, Romania, San Marino,
+        Slovakia, Slovenia, Spain, Sweden, Switzerland and the
+        United Kingdom.
 
         Core features
         -------------
@@ -105,7 +103,7 @@
     'currency': 'EUR',
     'support': 'dhlparcel.odoo@gmail.com',
     'images': ['static/description/main_screenshot.png'],
-    'version': '17.0.1.0.8',
+    'version': '17.0.2.0.0',
     'depends': ['stock_delivery', 'sale'],
     'data': [
         'security/dhl_parcel_security.xml',
