@@ -1,6 +1,6 @@
-# ParcelBridge for DHL eCommerce Benelux - Handleiding
+# Labels & Tracking for DHL eCommerce Benelux - Handleiding
 
-Deze handleiding beschrijft hoe je de module **ParcelBridge for DHL eCommerce Benelux**
+Deze handleiding beschrijft hoe je de module **Labels & Tracking for DHL eCommerce Benelux**
 installeert, configureert en gebruikt in de dagelijkse Odoo-workflow.
 
 > **Versie van de module:** 17.0.1.0.0 / 18.0.1.0.0 / 19.0.1.0.0 (functioneel identiek)
@@ -64,10 +64,10 @@ De module doet niet:
 
 Voor wie meteen aan de slag wil. Vijf stappen van nul naar je eerste label:
 
-1. **Installeer** de module via Apps → zoek *ParcelBridge for DHL* →
+1. **Installeer** de module via Apps → zoek *Labels & Tracking for DHL* →
    Install.
 2. Ga naar **Inventory → Configuration → Shipping Methods → New**.
-3. Provider = **ParcelBridge for DHL eCommerce Benelux**. Een tab "DHL Parcel" verschijnt.
+3. Provider = **Labels & Tracking for DHL eCommerce Benelux**. Een tab "DHL Parcel" verschijnt.
 4. Op die tab: vul **User ID**, **API Key**, **Account ID** in (zie sectie
    4 voor waar je die haalt). Kies een **Parcel type** (bv. *Pakket tot
    10kg*) en zet een **Flat price**. Selecteer **Countries** (de lijst is
@@ -217,7 +217,7 @@ deliveries.
 ### Module upgraden na een update
 
 Telkens je een nieuwe versie van de module trekt (git pull of marketplace
-update), ga je naar **Apps → ParcelBridge for DHL eCommerce Benelux → Upgrade**. Een
+update), ga je naar **Apps → Labels & Tracking for DHL eCommerce Benelux → Upgrade**. Een
 gewone server-restart volstaat niet als er nieuwe velden of modellen bij
 zijn gekomen.
 
@@ -302,7 +302,7 @@ daarnaast een **DHL Gemengd**-methode aan, zie verder.
 
 1. Ga naar **Inventory → Configuration → Shipping Methods → New**.
 2. Geef de methode een herkenbare naam (bv. *DHL Pakket tot 10kg*).
-3. Provider = **ParcelBridge for DHL eCommerce Benelux**. Een tab **DHL Parcel** verschijnt.
+3. Provider = **Labels & Tracking for DHL eCommerce Benelux**. Een tab **DHL Parcel** verschijnt.
 4. Op de DHL Parcel-tab:
    - **Credentials** - User ID, API Key, Account ID. Dezelfde drie waarden
      voor al je DHL-methodes als ze dezelfde DHL-account delen. Multi-account
